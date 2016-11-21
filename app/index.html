@@ -33,28 +33,28 @@
 
 
 <script type="text/ng-template" id="/tpl1.html">
-    <button class="pull-right"  ng-click="Load()">Load words !</button>
+    <button class="pull-right"  ng-click="ctrl.Load()">Load words !</button>
     <h2>This is the partial for view 1.</h2>
     <div class="row">
         <div class="col-block">
-            <input placeholder="test" ng-model="word"/>
+            <input placeholder="test" ng-model="ctrl.word"/>
 
-            <button ng-click="GetSynonyms()">Get Synonms !</button>
+            <button ng-click="ctrl.GetSynonyms()">Get Synonms !</button>
             <ul class="synonyms-list">
-                <li ng-repeat="word in words">
+                <li ng-repeat="word in ctrl.words">
                     <span>{{word}}</span>
                 </li>
             </ul>
-            <p ng-if="words.length === 0">
+            <p ng-if="ctrl.words.length === 0">
                 No synonyms !
             </p>
 
         </div>
         <div class="col-block">
-            <input placeholder="test" ng-model="text"/>
-            <button ng-click="Add()">Add new</button>
+            <input placeholder="test" ng-model="ctrl.inputSynonyms"/>
+            <button ng-click="ctrl.Add()">Add new</button>
 
-            <p ng-if="added">
+            <p ng-if="ctrl.added">
                 Your Synonyms have been added.
             </p>
         </div>
